@@ -20,7 +20,7 @@ jobs:
         password: ${{ secrets.dckr_pat_yTx1UnGwR2IKYW6itzHeh94fcMw }}
 
     - name: Build and Push Docker Image
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v3
       with:
         context: .
         push: true
