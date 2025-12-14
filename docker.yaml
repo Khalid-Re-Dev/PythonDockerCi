@@ -11,17 +11,17 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
     - name: Login to Docker Hub
       uses: docker/login-action@v3
       with:
-        username: ${{ khalidbd }}
-        password: ${{ dckr_pat_yTx1UnGwR2IKYW6itzHeh94fcMw }}
+        username: ${{ secrets.khalidbd }}
+        password: ${{ secrets.dckr_pat_yTx1UnGwR2IKYW6itzHeh94fcMw }}
 
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v5
       with:
         context: .
         push: true
-        tags: ${{ khalidbd }}/python-docker-ci:latest
+        tags: ${{ secrets.khalidbd }}/python-docker-ci:latest
